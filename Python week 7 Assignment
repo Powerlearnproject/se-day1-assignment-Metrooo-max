@@ -1,0 +1,118 @@
+Task 1: Load and Explore the Dataset
+We will use pandas to load the dataset and perform an initial inspection.
+
+python
+Copy code
+import pandas as pd
+
+# Step 1: Load the dataset
+# For example, let's use the Iris dataset from sklearn or load a CSV file from your local machine.
+
+# Load dataset from a CSV file
+try:
+    dataset = pd.read_csv('path_to_your_dataset.csv')  # Replace with the actual path to your CSV
+    print("Dataset loaded successfully!")
+except FileNotFoundError:
+    print("Error: The file was not found.")
+except pd.errors.EmptyDataError:
+    print("Error: The file is empty.")
+except Exception as e:
+    print(f"An error occurred: {e}")
+
+# Step 2: Display the first few rows of the dataset
+print(dataset.head())
+
+# Step 3: Explore the structure of the dataset
+print(dataset.info())  # Data types and non-null count
+print(dataset.isnull().sum())  # Check for missing values
+Task 1: Clean the Dataset
+Handling missing values can be done by either dropping or filling them. Here, we'll fill missing values with the mean of the respective column.
+
+python
+Copy code
+# Step 4: Clean the dataset by filling missing values
+dataset.fillna(dataset.mean(), inplace=True)  # Filling missing values with the mean of the column
+print("Missing values after cleaning:")
+print(dataset.isnull().sum())
+Task 2: Basic Data Analysis
+Now, let's perform some basic data analysis and grouping by a categorical column.
+
+python
+Copy code
+# Step 5: Compute basic statistics of the numerical columns
+print(dataset.describe())  # Mean, median, standard deviation, etc.
+
+# Step 6: Group by a categorical column and compute mean of a numerical column
+# Example: Group by species and compute the mean of the petal length
+grouped_data = dataset.groupby('species')['petal_length'].mean()
+print("Average petal length per species:")
+print(grouped_data)
+Task 3: Data Visualization
+We will now create four different visualizations using matplotlib and seaborn.
+
+1. Line Chart Showing Trends Over Time (for a time-series dataset)
+If your dataset has a time-related column, you can plot it as a line chart. Here, I'm assuming a hypothetical date column for time-series data:
+
+python
+Copy code
+import matplotlib.pyplot as plt
+
+# Step 7: Line Chart for Trends Over Time (assuming a 'date' column)
+# dataset['date'] = pd.to_datetime(dataset['date'])  # If there's a date column
+# dataset.set_index('date', inplace=True)
+# dataset['sales'].plot(kind='line', title='Sales Trend Over Time')
+plt.title("Sales Trend Over Time")  # Add a title
+plt.xlabel("Date")  # Add X-axis label
+plt.ylabel("Sales")  # Add Y-axis label
+plt.show()
+2. Bar Chart Showing Comparison of Numerical Values Across Categories
+For example, comparing average petal length across different species:
+
+python
+Copy code
+import seaborn as sns
+
+# Step 8: Bar Chart showing average petal length per species
+plt.figure(figsize=(8,6))
+sns.barplot(x='species', y='petal_length', data=dataset)
+plt.title('Average Petal Length per Species')
+plt.xlabel('Species')
+plt.ylabel('Average Petal Length')
+plt.show()
+3. Histogram to Understand the Distribution of a Numerical Column
+To understand the distribution of a numerical column, like petal width:
+
+python
+Copy code
+# Step 9: Histogram to understand the distribution of petal width
+plt.figure(figsize=(8,6))
+sns.histplot(dataset['petal_width'], bins=20, kde=True)
+plt.title('Distribution of Petal Width')
+plt.xlabel('Petal Width')
+plt.ylabel('Frequency')
+plt.show()
+4. Scatter Plot to Visualize the Relationship Between Two Numerical Columns
+Here, we can visualize the relationship between sepal length and petal length:
+
+python
+Copy code
+# Step 10: Scatter plot to visualize the relationship between sepal length and petal length
+plt.figure(figsize=(8,6))
+sns.scatterplot(x='sepal_length', y='petal_length', data=dataset)
+plt.title('Sepal Length vs Petal Length')
+plt.xlabel('Sepal Length')
+plt.ylabel('Petal Length')
+plt.show()
+Error Handling
+Ensure that all steps are surrounded by appropriate error-handling mechanisms, especially when loading files and working with potentially missing data.
+
+python
+Copy code
+try:
+    dataset = pd.read_csv('path_to_your_dataset.csv')  # Replace with actual file path
+except FileNotFoundError:
+    print("Error: File not found!")
+except pd.errors.EmptyDataError:
+    print("Error: Empty file!")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
