@@ -1,0 +1,226 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container Class */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo-img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.8em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 20px;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.nav-list li a:hover {
+    color: #f4f4f4;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Main Content Layout */
+main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Main Content Section */
+.main-content {
+    flex: 3;
+    padding-right: 20px;
+}
+
+.main-content h2 {
+    color: #333;
+}
+
+.main-content h3 {
+    margin-top: 20px;
+}
+
+article {
+    margin-top: 20px;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar form {
+    margin-top: 20px;
+}
+
+.sidebar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.sidebar button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sidebar button:hover {
+    background-color: #555;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer .social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .social-media a:hover {
+    color: #f4f4f4;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .main-content {
+        padding-right: 0;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-top: 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .nav-list li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .nav-list li a {
+        color: white;
+        font-size: 1.2em;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+}
+
+/* For smaller screens (mobile) */
+@media (max-width: 480px) {
+    .main-content h2 {
+        font-size: 1.6em;
+    }
+
+    .main-content h3 {
+        font-size: 1.4em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
