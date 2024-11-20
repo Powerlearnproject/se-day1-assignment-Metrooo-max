@@ -1,0 +1,15 @@
+# Step 1: Initialize Git repository (run in your terminal or command prompt)
+cd path/to/your/weather-app  # Navigate to your project folder
+git init  # Initialize a Git repository
+
+# Step 2: Add all your project files to Git's staging area
+git add .  # Adds all files to the staging area
+
+# Step 3: Commit your changes with a message
+git commit -m "Initial commit of weather app"  # Commit your changes
+
+# Step 4: Link your local repository to GitHub
+git remote add origin https://github.com/yourusername/weather-app.git  # Replace with your actual GitHub repository URL
+
+# Step 5: Push your code to GitHub
+git push -u origin main  # Push to the main branch (if it's the default branch)
