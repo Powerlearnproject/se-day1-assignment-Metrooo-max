@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemedicine Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Telemed Logo" class="logo-img">
+                <h1>TelemedCare</h1>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#appointments">Appointments</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger-menu">&#9776;</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="main-content">
+            <h2>Welcome to TelemedCare</h2>
+            <p>TelemedCare offers high-quality healthcare services remotely, connecting patients with healthcare providers through secure video consultations.</p>
+
+            <h3>Latest Updates</h3>
+            <article>
+                <h4>New Features in Telemedicine</h4>
+                <p>We have launched several new features, including instant appointment booking, secure messaging with doctors, and a personalized health dashboard. Stay tuned for more!</p>
+            </article>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#appointments">Book an Appointment</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+
+            <h3>Search</h3>
+            <form action="#" method="GET">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">Search</button>
+            </form>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TelemedCare. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#">Facebook</a> | 
+                <a href="#">Twitter</a> | 
+                <a href="#">Instagram</a>
+            </div>
+            <p>Contact: info@telemedcare.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
