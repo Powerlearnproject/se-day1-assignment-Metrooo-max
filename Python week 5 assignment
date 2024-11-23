@@ -1,0 +1,73 @@
+# Parent class: Smartphone
+class Smartphone:
+    def __init__(self, brand, model, battery_life):
+        self.brand = brand
+        self.model = model
+        self.battery_life = battery_life  # in hours
+
+    def make_call(self, number):
+        print(f"Calling {number}...")
+
+    def display_specs(self):
+        print(f"Brand: {self.brand}")
+        print(f"Model: {self.model}")
+        print(f"Battery Life: {self.battery_life} hours")
+
+# Child class: SmartphoneWithCamera (inherits from Smartphone)
+class SmartphoneWithCamera(Smartphone):
+    def __init__(self, brand, model, battery_life, camera_resolution):
+        super().__init__(brand, model, battery_life)  # Initialize parent class
+        self.camera_resolution = camera_resolution  # Camera resolution in megapixels
+
+    def take_photo(self):
+        print(f"Taking a photo with {self.camera_resolution}MP camera!")
+
+    def display_specs(self):
+        super().display_specs()  # Call the parent class method
+        print(f"Camera Resolution: {self.camera_resolution} MP")
+
+# Create instances of both classes
+phone1 = Smartphone("Samsung", "Galaxy S21", 24)
+phone1.display_specs()
+phone1.make_call("123-456-7890")
+
+print("\n---\n")
+
+phone2 = SmartphoneWithCamera("Apple", "iPhone 13", 20, 12)
+phone2.display_specs()
+phone2.make_call("987-654-3210")
+phone2.take_photo()
+
+
+
+
+
+
+
+
+
+
+
+
+# Parent class: Vehicle
+class Vehicle:
+    def move(self):
+        pass  # This is just a placeholder method to be overridden
+
+# Child class: Car
+class Car(Vehicle):
+    def move(self):
+        print("Driving 🚗")
+
+# Child class: Plane
+class Plane(Vehicle):
+    def move(self):
+        print("Flying ✈️")
+
+# Create instances of both vehicles
+car = Car()
+plane = Plane()
+
+# Call the move method on both instances
+car.move()   # Output: Driving 🚗
+plane.move()  # Output: Flying ✈️
